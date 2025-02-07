@@ -1,6 +1,7 @@
 Las empresas de tarjetas de crédito usan regresión logística para predecir si una transacción es fraudulenta o legítima basándose en patrones de gasto.
 
 Variables utilizadas:
+
 Monto de la compra 
 Ubicación de la transacción 
 Frecuencia de compras recientes
@@ -8,6 +9,7 @@ Hora del día
 Dispositivo utilizado (PC, móvil, etc.)
 
 Salida esperada:
+
 1 = Fraude detectado 
 0 = Transacción normal 
 
