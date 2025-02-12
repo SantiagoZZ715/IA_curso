@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar CUPS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <h3 class="center">Validación de CUPS</h3>
+        <div class="card  light-blue lighten-5">
+            <div class="card-content">
+                <form method="POST" class="col s12">
+                    <div class="input-field">
+                        <input type="text" id="fecha" name="fecha" class="datepicker" required>
+                        <label for="fecha">Fecha</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="cups" name="cups" required>
+                        <label for="cups">Código CUPS</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="descripcion" name="descripcion" required>
+                        <label for="descripcion">Descripción</label>
+                    </div>
+                    <div class="input-field">
+                        <select name="tipo_atencion" required>
+                            <option value="" disabled selected>Seleccione el tipo de atención</option>
+                            <option value="AP">Atención Procedimiento (AP)</option>
+                            <option value="AC">Atención Consulta (AC)</option>
+                        </select>
+                        <label>Tipo de Atención</label>
+                    </div>
+                    <div class="center">
+                        <button class="btn waves-effect waves-light" type="submit">Validar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        {% if resultado %}
+            <div class="card-panel teal lighten-4">
+                <strong>Resultado:</strong> {{ resultado }}
+            </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        M.FormSelect.init(elems);
+
+        var dateElems = document.querySelectorAll('.datepicker');
+        M.Datepicker.init(dateElems, {
+            format: 'yyyy-mm-dd',
+            defaultDate: new Date(),
+            setDefaultDate: true,
+            i18n: {
+                cancel: 'Cancelar',
+                clear: 'Limpiar',
+                done: 'Aceptar',
+                months: [
+                    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+                ],
+                monthsShort: [
+                    'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
+                    'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'
+                ],
+                weekdays: [
+                    'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'
+                ],
+                weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+                weekdaysAbbrev: ['D', 'L', 'M', 'M', 'J', 'V', 'S']
+            }
+        });
+    });
+    </script>
+</body>
+</html>
