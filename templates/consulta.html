@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Consultas RIPS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#textEditor',
+            height: 300,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3 class="center">Registro de Consultas RIPS</h3>
+        <div class="card light-blue lighten-5">
+            <div class="card-content">
+                <form method="POST" class="row">
+                    <div class="col s12 m4 l4">
+                        <div class="input-field">
+                            <input type="text" id="codPrestador" name="codPrestador" required>
+                            <label for="codPrestador">Código del Prestador</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="datetime-local" id="fechalnicioAtencion" name="fechalnicioAtencion" required>
+                            <label for="fechalnicioAtencion">Fecha y Hora de Inicio de Atención</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="numAutorizacion" name="numAutorizacion" required>
+                            <label for="numAutorizacion">Número de Autorización</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="codConsulta" name="codConsulta" required>
+                            <label for="codConsulta">Código de Consulta</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="modalidadGrupoServicioTecSal" name="modalidadGrupoServicioTecSal" required>
+                            <label for="modalidadGrupoServicioTecSal">Modalidad del Grupo de Servicio de Tecnología de Salud</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="grupoServicios" name="grupoServicios" required>
+                            <label for="grupoServicios">Grupo de Servicios</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="numFEVPagoModerador" name="numFEVPagoModerador" required>
+                            <label for="numFEVPagoModerador">Número FEV del Pago Moderador</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="input-field">
+                            <input type="text" id="codServicio" name="codServicio" required>
+                            <label for="codServicio">Código de Servicio</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="finalidadTecnologiaSalud" name="finalidadTecnologiaSalud" required>
+                            <label for="finalidadTecnologiaSalud">Finalidad de la Tecnología en Salud</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="causaMotivoAtencion" name="causaMotivoAtencion" required>
+                            <label for="causaMotivoAtencion">Causa o Motivo de Atención</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="codDiagnosticoPrincipal" name="codDiagnosticoPrincipal" required>
+                            <label for="codDiagnosticoPrincipal">Código de Diagnóstico Principal</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="codDiagnosticoRelacionador" name="codDiagnosticoRelacionador">
+                            <label for="codDiagnosticoRelacionador">Código de Diagnóstico Relacionador</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="codDiagnosticoRelacionado2" name="codDiagnosticoRelacionado2">
+                            <label for="codDiagnosticoRelacionado2">Código de Diagnóstico Relacionado 2</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="number" id="consecutivo" name="consecutivo" required>
+                            <label for="consecutivo">Consecutivo</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="input-field">
+                            <input type="text" id="codDiagnosticoRelacionado3" name="codDiagnosticoRelacionado3">
+                            <label for="codDiagnosticoRelacionado3">Código de Diagnóstico Relacionado 3</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="tipoDiagnosticoPrincipal" name="tipoDiagnosticoPrincipal" required>
+                            <label for="tipoDiagnosticoPrincipal">Tipo de Diagnóstico Principal</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="tipoDocumentoldentificacion" name="tipoDocumentoldentificacion" required>
+                            <label for="tipoDocumentoldentificacion">Tipo de Documento de Identificación</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="numDocumentoldentificacion" name="numDocumentoldentificacion" required>
+                            <label for="numDocumentoldentificacion">Número de Documento de Identificación</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="number" id="vrServicio" name="vrServicio" step="any" required>
+                            <label for="vrServicio">Valor del Servicio</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="conceptoRecaudo" name="conceptoRecaudo" required>
+                            <label for="conceptoRecaudo">Concepto de Recaudo</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="number" id="valorPagoModerador" name="valorPagoModerador" step="any" required>
+                            <label for="valorPagoModerador">Valor del Pago Moderador</label>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <div class="input-field">
+                                <textarea id="textEditor" name="textEditor"></textarea>
+                                <label for="textEditor">Texto Enriquecido</label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="center">
+                        <button class="btn waves-effect waves-light" type="submit">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

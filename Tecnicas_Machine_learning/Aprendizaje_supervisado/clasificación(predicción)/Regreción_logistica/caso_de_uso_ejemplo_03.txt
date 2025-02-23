@@ -1,0 +1,14 @@
+Los médicos pueden usar regresión logística para predecir si un paciente tiene una enfermedad en función de sus síntomas y análisis clínicos.
+
+Variables utilizadas:
+
+Nivel de glucosa en sangre (para diabetes)
+Presión arterial 
+Frecuencia cardiaca 
+Edad y género
+Historial familiar de enfermedades
+
+Salida esperada:
+1 = Enfermedad detectada 
+0 = Paciente sano 
+ Ejemplo real: Si un paciente tiene glucosa alta, sobrepeso y antecedentes familiares de diabetes, el modelo puede predecir que está en riesgo y recomendar más pruebas médicas.

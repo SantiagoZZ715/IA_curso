@@ -1,0 +1,15 @@
+Las empresas pueden predecir si un cliente comprará un producto basándose en su comportamiento previo.
+
+Variables utilizadas:
+
+Edad y género
+Interacciones previas con la marca (clics en anuncios, correos abiertos)
+Historial de compras 🛒
+Tiempo pasado en la página web
+Ubicación geográfica
+
+Salida esperada:
+
+1 = Cliente comprará 
+0 = Cliente no comprará 
+Ejemplo real: Si un cliente ha visitado varias veces la página de un producto pero no lo ha comprado, el modelo puede predecir que hay una alta probabilidad de compra y recomendar enviarle un cupón de descuento para convencerlo.
